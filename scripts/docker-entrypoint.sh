@@ -61,7 +61,11 @@ connect_ssh() {
 }
 
 deploy() {
-  docker stack deploy --with-registry-auth -c "${STACK_FILE}" "${STACK_NAME}"
+  if [[ -n "${STACK_PARAM}" ]]; then
+    docker stack deploy --with-registry-auth "${STACK_PARAM}" -c "${STACK_FILE}" "${STACK_NAME}"
+  else
+    docker stack deploy --with-registry-auth -c "${STACK_FILE}" "${STACK_NAME}"
+  fi
 }
 
 check_deploy() {
