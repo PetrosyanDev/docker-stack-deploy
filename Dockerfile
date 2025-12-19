@@ -1,4 +1,4 @@
-FROM alpinelinux/docker-cli:latest
+FROM docker:29-cli
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
       org.label-schema.name="docker-stack-deploy" \
