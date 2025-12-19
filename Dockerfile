@@ -1,11 +1,11 @@
 FROM docker:29-cli
 
-LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
+LABEL maintainer="Erik Petrosyan <dev.erikpetrosyan@gmail.com>" \
       org.label-schema.name="docker-stack-deploy" \
       org.label-schema.description="Deploy docker stack" \
-      org.label-schema.vendor="kitconcept GmbH" \
-      org.opencontainers.image.source="https://github.com/kitconcept/docker-stack-deploy" \
-      org.label-schema.docker.cmd="docker run -rm -v "${PWD}":/github/workspace ghcr.io/kitconcept/docker-stack-deploy"
+      org.label-schema.vendor="Erik Petrosyan" \
+      org.opencontainers.image.source="https://github.com/PetrosyanDev/docker-stack-deploy" \
+      org.label-schema.docker.cmd="docker run --rm -v \${PWD}:/github/workspace ghcr.io/petrosyandev/docker-stack-deploy"
 
 RUN apk add --no-cache openssh-client findutils bash
 
