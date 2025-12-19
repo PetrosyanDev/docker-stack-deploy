@@ -58,7 +58,7 @@ inputs:
     default: ""
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/PetrosyanDev/docker-stack-deploy:latest'
+  image: 'docker://ghcr.io/petrosyandev/docker-stack-deploy:latest'
   env:
     REGISTRY: ${{ inputs.registry }}
     USERNAME: ${{ inputs.username }}
