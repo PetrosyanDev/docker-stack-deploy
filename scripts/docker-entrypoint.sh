@@ -68,11 +68,6 @@ deploy() {
   fi
 }
 
-check_deploy() {
-  echo "Deploy: Checking status"
-  /stack-wait.sh -t "${DEPLOY_TIMEOUT}" "${STACK_NAME}"
-}
-
 scale_after() {
   if [[ -n "$SCALE_AFTER" ]]; then
     echo "Scaling services: $SCALE_AFTER"
@@ -184,13 +179,6 @@ if deploy > $OUT; then
   echo "Deploy: Updated services"
 else
   echo "Deploy: Failed to deploy ${STACK_NAME} from file ${STACK_FILE}"
-  exit 1
-fi
-
-if check_deploy; then
-  echo "Deploy: Completed"
-else
-  echo "Deploy: Failed"
   exit 1
 fi
 
